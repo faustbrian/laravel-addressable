@@ -1,0 +1,16 @@
+{
+    "name": "draperstudio/laravel-addressable",
+    "description": "Polymorphic Addresses for Laravel 5.",
+    "require": {
+        "php": ">=5.5.9",
+        "draperstudio/laravel-countries": "~1.0",
+        "draperstudio/laravel-database": "~1.0",
+        "draperstudio/laravel-service-provider": "~1.0",
+        "jackpopp/geodistance": "~1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "DraperStudio\\Addressable\\": "src/"
+        }
+    }
+}
