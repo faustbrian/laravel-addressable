@@ -1,30 +1,59 @@
 <?php
 
+/*
+ * This file is part of Laravel Addressable.
+ *
+ * (c) DraperStudio <hello@draperstudio.tech>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace DraperStudio\Addressable\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use DraperStudio\Countries\Models\Country;
 use Jackpopp\GeoDistance\GeoDistanceTrait;
-use DraperStudio\Database\Traits\Models\EncryptAttributes;
+use DraperStudio\Eloquent\Models\Traits\EncryptAttributes;
 
+/**
+ * Class Address.
+ *
+ * @author DraperStudio <hello@draperstudio.tech>
+ */
 class Address extends Model
 {
     use GeoDistanceTrait, EncryptAttributes;
 
+    /**
+     * @var string
+     */
     protected $table = 'addresses';
 
+    /**
+     * @var array
+     */
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\MorphTo
+     */
     public function addressable()
     {
         return $this->morphTo();
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function country()
     {
         return $this->belongsTo(Country::class);
     }
 
+    /**
+     *
+     */
     public static function boot()
     {
         parent::boot();
@@ -44,6 +73,9 @@ class Address extends Model
         });
     }
 
+    /**
+     * @return string
+     */
     public function getNameAttribute()
     {
         return sprintf(
@@ -52,11 +84,17 @@ class Address extends Model
         );
     }
 
+    /**
+     * @return string
+     */
     public function getAddressAttribute()
     {
         return sprintf('%s, %s %s', $this->city, $this->state, $this->postcode);
     }
 
+    /**
+     * @return $this
+     */
     public function geocode()
     {
         if (!empty($this->postcode)) {
@@ -78,6 +116,9 @@ class Address extends Model
         return $this;
     }
 
+    /**
+     * @return array|mixed
+     */
     protected static function getEncryptedAttributes()
     {
         return config('addressable.encrypt')

@@ -1,16 +1,54 @@
 {
     "name": "draperstudio/laravel-addressable",
-    "description": "Polymorphic Addresses for Laravel 5.",
+    "type": "library",
+    "description": "Addressable Polymorphic Eloquent Models for Laravel 5",
+    "keywords": [
+        "draperstudio",
+        "laravel-addressable"
+    ],
+    "homepage": "https://github.com/DraperStudio/laravel-addressable",
+    "license": "MIT",
+    "authors": [{
+        "name": "DraperStudio",
+        "email": "hello@draperstudio.tech",
+        "homepage": "http://draperstudio.tech",
+        "role": "Developer"
+    }],
     "require": {
-        "php": ">=5.5.9",
-    "draperstudio/laravel-countries": "^1.0",
-        "draperstudio/laravel-database": "^1.0",
-        "draperstudio/laravel-service-provider": "^1.0",
+        "php": "^5.6 || ^7.0",
+        "draperstudio/laravel-countries": "^0.1",
+        "draperstudio/eloquent-models": "^0.1",
+        "draperstudio/laravel-service-provider": "^0.1",
         "jackpopp/geodistance": "^1.2"
+    },
+    "require-dev": {
+        "graham-campbell/testbench": "^3.1",
+        "mockery/mockery": "^0.9.4",
+        "phpunit/phpunit": "^5.0",
+        "scrutinizer/ocular": "~1.1",
+        "squizlabs/php_codesniffer": "~2.3"
     },
     "autoload": {
         "psr-4": {
             "DraperStudio\\Addressable\\": "src/"
         }
-    }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DraperStudio\\Tests\\Addressable\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

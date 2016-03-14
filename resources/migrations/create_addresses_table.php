@@ -5,8 +5,16 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+/**
+ * Class CreateAddressesTable.
+ *
+ * @author DraperStudio <hello@draperstudio.tech>
+ */
 class CreateAddressesTable extends Migration
 {
+    /**
+     *
+     */
     public function up()
     {
         Schema::create('addresses', function (Blueprint $table) {
@@ -37,6 +45,9 @@ class CreateAddressesTable extends Migration
         });
     }
 
+    /**
+     *
+     */
     public function down()
     {
         Schema::dropIfExists('addresses');
