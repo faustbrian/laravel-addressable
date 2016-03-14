@@ -51,9 +51,6 @@ class Address extends Model
         return $this->belongsTo(Country::class);
     }
 
-    /**
-     *
-     */
     public static function boot()
     {
         parent::boot();

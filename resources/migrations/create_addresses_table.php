@@ -12,9 +12,6 @@ use Illuminate\Support\Facades\Schema;
  */
 class CreateAddressesTable extends Migration
 {
-    /**
-     *
-     */
     public function up()
     {
         Schema::create('addresses', function (Blueprint $table) {
@@ -45,9 +42,6 @@ class CreateAddressesTable extends Migration
         });
     }
 
-    /**
-     *
-     */
     public function down()
     {
         Schema::dropIfExists('addresses');
