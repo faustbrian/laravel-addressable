@@ -36,13 +36,13 @@ php artisan countries:seed
 
 namespace App;
 
-use BrianFaust\Addressable\Contracts\Addressable;
-use BrianFaust\Addressable\Traits\Addressable as AddressableTrait;
+use BrianFaust\Addressable\HasAddressTrait;
+use BrianFaust\Addressable\Interfaces\HasAddress;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model implements Addressable
+class Post extends Model implements HasAddress
 {
-    use AddressableTrait;
+    use HasAddressTrait;
 }
 ```
 

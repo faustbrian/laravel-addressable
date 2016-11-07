@@ -1,20 +1,14 @@
 <?php
 
-namespace BrianFaust\Addressable\Models;
+namespace BrianFaust\Addressable;
 
 use Illuminate\Database\Eloquent\Model;
-use BrianFaust\Countries\Models\Country;
+use BrianFaust\Countries\Country;
 use Jackpopp\GeoDistance\GeoDistanceTrait;
-use BrianFaust\Eloquent\Models\Traits\EncryptAttributes;
 
 class Address extends Model
 {
-    use GeoDistanceTrait, EncryptAttributes;
-
-    /**
-     * @var string
-     */
-    protected $table = 'addresses';
+    use GeoDistanceTrait;
 
     /**
      * @var array
@@ -97,15 +91,5 @@ class Address extends Model
         }
 
         return $this;
-    }
-
-    /**
-     * @return array|mixed
-     */
-    protected static function getEncryptedAttributes()
-    {
-        return config('addressable.encrypt')
-                    ? config('addressable.encryptColumns')
-                    : [];
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace BrianFaust\Addressable\Contracts;
+namespace BrianFaust\Addressable\Interfaces;
 
-interface Addressable
+interface HasAddresses
 {
     /**
      * @return mixed

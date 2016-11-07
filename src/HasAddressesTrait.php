@@ -1,11 +1,10 @@
 <?php
 
-namespace BrianFaust\Addressable\Traits;
+namespace BrianFaust\Addressable;
 
-use BrianFaust\Addressable\Models\Address;
 use Illuminate\Support\Collection;
 
-trait Addressable
+trait HasAddressesTrait
 {
     /**
      * @return mixed

@@ -3,10 +3,10 @@
 namespace BrianFaust\Addressable;
 
 use BrianFaust\Countries\ServiceProvider as CountriesServiceProvider;
-use BrianFaust\ServiceProvider\ServiceProvider as BaseProvider;
-use Illuminate\Contracts\Foundation\Application;
+use BrianFaust\ServiceProvider\ServiceProvider;
+use Illuminate\Interfaces\Foundation\Application;
 
-class ServiceProvider extends BaseProvider
+class AddressableServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.

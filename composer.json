@@ -11,9 +11,8 @@
     }],
     "require": {
         "php": "^5.6 || ^7.0",
-        "faustbrian/laravel-countries": "^1.0",
-        "faustbrian/eloquent-models": "^1.0",
         "faustbrian/laravel-service-provider": "^1.0",
+        "faustbrian/laravel-countries": "^1.0",
         "jackpopp/geodistance": "^1.2"
     },
     "require-dev": {
