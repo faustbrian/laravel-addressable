@@ -2,7 +2,7 @@
 
 namespace BrianFaust\Addressable;
 
-use BrianFaust\Countries\ServiceProvider as CountriesServiceProvider;
+use BrianFaust\Countries\CountriesServiceProvider;
 use BrianFaust\ServiceProvider\ServiceProvider;
 use Illuminate\Interfaces\Foundation\Application;
 
