@@ -12,7 +12,7 @@ And then include the service provider within `app/config/app.php`.
 
 ``` php
 'providers' => [
-    BrianFaust\Addressable\ServiceProvider::class
+    BrianFaust\Addressable\AddressableServiceProvider::class
 ];
 ```
 
