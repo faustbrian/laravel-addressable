@@ -3,7 +3,6 @@
 namespace BrianFaust\Addressable;
 
 use Illuminate\Database\Eloquent\Model;
-use BrianFaust\Countries\Country;
 use Jackpopp\GeoDistance\GeoDistanceTrait;
 
 class Address extends Model
@@ -28,7 +27,7 @@ class Address extends Model
      */
     public function country()
     {
-        return $this->belongsTo(Country::class);
+        return $this->belongsTo(config('addressable.models.country'));
     }
 
     public static function boot()
