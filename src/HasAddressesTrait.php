@@ -11,7 +11,7 @@ trait HasAddressesTrait
      */
     public function addresses()
     {
-        return $this->morphMany(Address::class, 'addressable');
+        return $this->morphMany(config('addressable.models.address'), 'addressable');
     }
 
     /**
