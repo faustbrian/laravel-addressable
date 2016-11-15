@@ -50,25 +50,6 @@ class Address extends Model
     }
 
     /**
-     * @return string
-     */
-    public function getNameAttribute()
-    {
-        return sprintf(
-            '%s %s %s %s', $this->name_prefix, $this->name_suffix,
-            $this->first_name, $this->last_name
-        );
-    }
-
-    /**
-     * @return string
-     */
-    public function getAddressAttribute()
-    {
-        return sprintf('%s, %s %s', $this->city, $this->state, $this->postcode);
-    }
-
-    /**
      * @return $this
      */
     public function geocode()
