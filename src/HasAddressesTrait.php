@@ -63,37 +63,6 @@ trait HasAddressesTrait
     }
 
     /**
-     * @param $data
-     *
-     * @return mixed
-     */
-    public function createAddress($data)
-    {
-        return $this->addresses()->save(new Address($data));
-    }
-
-    /**
-     * @param $address
-     * @param $data
-     *
-     * @return mixed
-     */
-    public function updateAddress($address, $data)
-    {
-        return $address->update($data);
-    }
-
-    /**
-     * @param $address
-     *
-     * @return mixed
-     */
-    public function deleteAddress($address)
-    {
-        return $address->delete();
-    }
-
-    /**
      * @param $distance
      * @param $type
      * @param $lat
