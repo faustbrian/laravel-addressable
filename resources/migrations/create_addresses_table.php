@@ -19,12 +19,12 @@ class CreateAddressesTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('street');
-            $table->string('building_number');
+            $table->string('building_number')->nullable();
             $table->string('building_flat')->nullable();
             $table->string('city');
             $table->string('city_prefix')->nullable();
             $table->string('city_suffix')->nullable();
-            $table->string('state');
+            $table->string('state')->nullable();
             $table->string('state_code')->nullable();
             $table->string('postcode');
             $table->string('phone')->nullable();
