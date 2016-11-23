@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Laravel Addressable.
+ *
+ * (c) Brian Faust <hello@brianfaust.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace BrianFaust\Addressable;
 
 use Illuminate\Database\Eloquent\Model;
@@ -54,7 +63,7 @@ class Address extends Model
      */
     public function geocode()
     {
-        if (!empty($this->postcode)) {
+        if (! empty($this->postcode)) {
             $string[] = $this->street;
             $string[] = sprintf('%s, %s %s', $this->city, $this->state, $this->postcode);
             $string[] = $this->country_name;

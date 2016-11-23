@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Laravel Addressable.
+ *
+ * (c) Brian Faust <hello@brianfaust.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace BrianFaust\Addressable;
 
 use Illuminate\Support\Collection;
@@ -21,7 +30,7 @@ trait HasAddressesTrait
      */
     public function primaryAddress($address = null)
     {
-        if (!empty($address)) {
+        if (! empty($address)) {
             $address->update([
                 'is_primary' => 1, 'is_billing' => 0, 'is_shipping' => 0,
             ]);
@@ -37,7 +46,7 @@ trait HasAddressesTrait
      */
     public function billingAddress($address = null)
     {
-        if (!empty($address)) {
+        if (! empty($address)) {
             $address->update([
                 'is_primary' => 0, 'is_billing' => 1, 'is_shipping' => 0,
             ]);
@@ -53,7 +62,7 @@ trait HasAddressesTrait
      */
     public function shippingAddress($address = null)
     {
-        if (!empty($address)) {
+        if (! empty($address)) {
             $address->update([
                 'is_primary' => 0, 'is_billing' => 0, 'is_shipping' => 1,
             ]);
