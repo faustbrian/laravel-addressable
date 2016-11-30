@@ -13,7 +13,7 @@ namespace BrianFaust\Addressable;
 
 use Illuminate\Support\Collection;
 
-trait HasAddressesTrait
+trait HasAddresses
 {
     /**
      * @return mixed
@@ -30,7 +30,7 @@ trait HasAddressesTrait
      */
     public function primaryAddress($address = null)
     {
-        if (! empty($address)) {
+        if (!empty($address)) {
             $address->update([
                 'is_primary' => 1, 'is_billing' => 0, 'is_shipping' => 0,
             ]);
@@ -46,7 +46,7 @@ trait HasAddressesTrait
      */
     public function billingAddress($address = null)
     {
-        if (! empty($address)) {
+        if (!empty($address)) {
             $address->update([
                 'is_primary' => 0, 'is_billing' => 1, 'is_shipping' => 0,
             ]);
@@ -62,7 +62,7 @@ trait HasAddressesTrait
      */
     public function shippingAddress($address = null)
     {
-        if (! empty($address)) {
+        if (!empty($address)) {
             $address->update([
                 'is_primary' => 0, 'is_billing' => 0, 'is_shipping' => 1,
             ]);
