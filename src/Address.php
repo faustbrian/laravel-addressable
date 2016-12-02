@@ -63,7 +63,7 @@ class Address extends Model
      */
     public function geocode()
     {
-        if (! empty($this->postcode)) {
+        if (!empty($this->postcode)) {
             $string[] = $this->street;
             $string[] = sprintf('%s, %s %s', $this->city, $this->state, $this->postcode);
             $string[] = $this->country_name;
