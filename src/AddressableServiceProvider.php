@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace BrianFaust\Addressable;
 
 use BrianFaust\Countries\CountriesServiceProvider;
@@ -20,7 +22,7 @@ class AddressableServiceProvider extends ServiceProvider
     /**
      * Bootstrap the application services.
      */
-    public function boot()
+    public function boot(): void
     {
         $this->publishMigrations();
 
@@ -30,7 +32,7 @@ class AddressableServiceProvider extends ServiceProvider
     /**
      * Register the application services.
      */
-    public function register()
+    public function register(): void
     {
         parent::register();
 
@@ -44,7 +46,7 @@ class AddressableServiceProvider extends ServiceProvider
      *
      * @return array
      */
-    public function provides()
+    public function provides(): array
     {
         return array_merge(parent::provides(), [
             CountriesServiceProvider::class,
@@ -56,7 +58,7 @@ class AddressableServiceProvider extends ServiceProvider
      *
      * @return string
      */
-    public function getPackageName()
+    public function getPackageName(): string
     {
         return 'addressable';
     }
