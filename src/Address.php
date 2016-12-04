@@ -11,19 +11,12 @@
 
 declare(strict_types=1);
 
-/*
- * This file is part of Laravel Addressable.
- *
- * (c) Brian Faust <hello@brianfaust.de>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace BrianFaust\Addressable;
 
 use Illuminate\Database\Eloquent\Model;
 use Jackpopp\GeoDistance\GeoDistanceTrait;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Address extends Model
 {
@@ -37,7 +30,7 @@ class Address extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\MorphTo
      */
-    public function addressable()
+    public function addressable(): MorphTo
     {
         return $this->morphTo();
     }
@@ -45,12 +38,12 @@ class Address extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function country()
+    public function country(): BelonsgTo
     {
         return $this->belongsTo(config('addressable.models.country'));
     }
 
-    public static function boot()
+    public static function boot(): void
     {
         parent::boot();
 
@@ -72,7 +65,7 @@ class Address extends Model
     /**
      * @return $this
      */
-    public function geocode()
+    public function geocode(): self
     {
         if (!empty($this->postcode)) {
             $string[] = $this->street;

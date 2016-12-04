@@ -11,25 +11,17 @@
 
 declare(strict_types=1);
 
-/*
- * This file is part of Laravel Addressable.
- *
- * (c) Brian Faust <hello@brianfaust.de>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace BrianFaust\Addressable;
 
 use Illuminate\Support\Collection;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 trait HasAddresses
 {
     /**
-     * @return mixed
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
-    public function addresses()
+    public function addresses(): MorphMany
     {
         return $this->morphMany(config('addressable.models.address'), 'addressable');
     }
@@ -39,7 +31,7 @@ trait HasAddresses
      *
      * @return mixed
      */
-    public function primaryAddress($address = null)
+    public function primaryAddress($address = null): Model
     {
         if (!empty($address)) {
             $address->update([
@@ -55,7 +47,7 @@ trait HasAddresses
      *
      * @return mixed
      */
-    public function billingAddress($address = null)
+    public function billingAddress($address = null): Model
     {
         if (!empty($address)) {
             $address->update([
@@ -71,7 +63,7 @@ trait HasAddresses
      *
      * @return mixed
      */
-    public function shippingAddress($address = null)
+    public function shippingAddress($address = null): Model
     {
         if (!empty($address)) {
             $address->update([
@@ -90,7 +82,7 @@ trait HasAddresses
      *
      * @return Collection
      */
-    public static function findByDistance($distance, $type, $lat, $lng)
+    public static function findByDistance($distance, $type, $lat, $lng): Collection
     {
         $records = Address::within($distance, $type, $lat, $lng)->get();
 
