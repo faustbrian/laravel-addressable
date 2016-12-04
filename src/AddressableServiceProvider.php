@@ -14,10 +14,10 @@ declare(strict_types=1);
 namespace BrianFaust\Addressable;
 
 use BrianFaust\Countries\CountriesServiceProvider;
-use BrianFaust\ServiceProvider\ServiceProvider;
+use BrianFaust\ServiceProvider\AbstractServiceProvider;
 use Illuminate\Interfaces\Foundation\Application;
 
-class AddressableServiceProvider extends ServiceProvider
+class AddressableServiceProvider extends AbstractServiceProvider
 {
     /**
      * Bootstrap the application services.
