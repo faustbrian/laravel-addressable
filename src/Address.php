@@ -47,7 +47,7 @@ class Address extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function country(): BelonsgTo
+    public function country(): BelongsTo
     {
         return $this->belongsTo(config('addressable.models.country'));
     }
