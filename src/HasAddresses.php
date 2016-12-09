@@ -22,6 +22,7 @@ declare(strict_types=1);
 
 namespace BrianFaust\Addressable;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Support\Collection;
 
