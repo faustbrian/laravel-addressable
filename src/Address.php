@@ -22,6 +22,7 @@ declare(strict_types=1);
 
 namespace BrianFaust\Addressable;
 
+use BrianFaust\Countries\Models\Country;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
