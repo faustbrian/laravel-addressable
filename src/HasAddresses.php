@@ -29,6 +29,14 @@ use Illuminate\Support\Collection;
 trait HasAddresses
 {
     /**
+     * @return \BrianFaust\Addressable\Address
+     */
+    public function getAddressAttribute()
+    {
+        return $this->primaryAddress();
+    }
+    
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function addresses(): MorphMany
