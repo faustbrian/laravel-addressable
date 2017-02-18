@@ -35,7 +35,7 @@ trait HasAddresses
     {
         return $this->primaryAddress();
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
