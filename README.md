@@ -25,7 +25,7 @@ php artisan vendor:publish --provider="BrianFaust\Addressable\AddressableService
 Now you can seed the countries into the database like this.
 
 ```bash
-php artisan countries:seed
+php artisan seed:countries
 ```
 
 ## Usage
