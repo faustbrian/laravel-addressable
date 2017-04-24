@@ -25,7 +25,7 @@ You can publish the migration with:
 $ php artisan vendor:publish --provider="BrianFaust\Addressable\AddressableServiceProvider" --tag="migrations"
 ```
 
-After the migration has been published you can create the role- and permission-tables by running the migrations:
+After the migration has been published you can create the tables by running the migrations:
 
 ```bash
 $ php artisan migrate
