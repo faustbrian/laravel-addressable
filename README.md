@@ -46,10 +46,9 @@ $ php artisan vendor:publish --provider="BrianFaust\Addressable\AddressableServi
 namespace App;
 
 use BrianFaust\Addressable\HasAddresses;
-use BrianFaust\Addressable\Interfaces\HasAddress;
 use Illuminate\Database\Eloquent\Model;
 
-class Order extends Model implements HasAddress
+class Order extends Model
 {
     use HasAddresses;
 }
