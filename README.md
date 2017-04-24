@@ -10,22 +10,31 @@ Require this package, with [Composer](https://getcomposer.org/), in the root dir
 $ composer require faustbrian/laravel-addressable
 ```
 
-And then include the service provider within `app/config/app.php`.
+Now add the service provider within `app/config/app.php`.
 
 ``` php
-BrianFaust\Addressable\AddressableServiceProvider::class
+'providers' => [
+    // ...
+    BrianFaust\Addressable\AddressableServiceProvider::class
+];
 ```
 
-To get started, you'll need to publish the vendor assets and migrate the countries table:
+You can publish the migration with:
 
 ```bash
-php artisan vendor:publish --provider="BrianFaust\Addressable\AddressableServiceProvider" && php artisan migrate
+$ php artisan vendor:publish --provider="BrianFaust\Addressable\AddressableServiceProvider" --tag="migrations"
 ```
 
-Now you can seed the countries into the database like this.
+After the migration has been published you can create the role- and permission-tables by running the migrations:
 
 ```bash
-php artisan seed:countries
+$ php artisan migrate
+```
+
+You can publish the config file with:
+
+```bash
+$ php artisan vendor:publish --provider="BrianFaust\Addressable\AddressableServiceProvider" --tag="config"
 ```
 
 ## Usage
@@ -36,35 +45,30 @@ php artisan seed:countries
 
 namespace App;
 
-use BrianFaust\Addressable\HasAddressTrait;
+use BrianFaust\Addressable\HasAddresses;
 use BrianFaust\Addressable\Interfaces\HasAddress;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model implements HasAddress
+class Order extends Model implements HasAddress
 {
-    use HasAddressTrait;
+    use HasAddresses;
 }
 ```
 
-### Set an address as Primary address
+### Get an address by role
 ``` php
-$user->primaryAddress(Address::find(1));
+$user->address('billing');
 ```
 
-### Set an address as Billing address
+### Set the role of an address
 ``` php
-$user->billingAddress(Address::find(2));
+$user->address('billing', Address::find(1));
 ```
 
-### Set an address as Shipping address
+### Create a new address (with a role)
 ``` php
-$user->shippingAddress(Address::find(3));
-```
-
-### Create a new address
-``` php
-$user->createAddress([
-    'country_id' => Country::find(1)->id,
+$user->address('shipping', [
+    'country_id' => 26,
     'name_prefix' => 'Mrs',
     'first_name' => 'John',
     'last_name' => 'Doe',
@@ -74,31 +78,6 @@ $user->createAddress([
     'state' => 'New York',
     'postcode' => 12345,
 ]);
-```
-
-### Update an existing address
-``` php
-$user->updateAddress(Address::find(1), [
-    'country_id' => Country::find(1)->id,
-    'name_prefix' => 'Mrs',
-    'first_name' => 'John',
-    'last_name' => 'Doe',
-    'street' => 'JohnDoe Lane',
-    'building_number' => 123,
-    'city' => 'New York',
-    'state' => 'New York',
-    'postcode' => 12345,
-]);
-```
-
-### Delete an existing address
-``` php
-$user->deleteAddress(Address::find(1));
-```
-
-### Find all Users which have an address within 5 miles around the given geo location
-``` php
-User::findByDistance(5, 'miles', $lat, $lng);
 ```
 
 ## Changelog

@@ -19,8 +19,9 @@ class CreateAddressesTable extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->increments('id');
-            $table->morphs('addressable');
-            $table->integer('country_id')->unsigned()->index();
+            $table->morphs('model');
+            $table->unsignedInteger('country_id');
+            $table->string('role')->default('main');
             $table->string('organization')->nullable();
             $table->string('name_prefix');
             $table->string('name_suffix')->nullable();
@@ -38,10 +39,9 @@ class CreateAddressesTable extends Migration
             $table->string('phone')->nullable();
             $table->float('lat')->nullable();
             $table->float('lng')->nullable();
-            foreach (config('addressable.flags', []) as $flag) {
-                $table->boolean('is_'.$flag)->default(false)->index();
-            }
             $table->timestamps();
+
+            $table->unique(['model_id', 'model_type', 'role']);
         });
     }
 
