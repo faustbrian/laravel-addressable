@@ -23,7 +23,7 @@ class CreateAddressesTable extends Migration
             $table->unsignedInteger('country_id');
             $table->string('role')->default('main');
             $table->string('organization')->nullable();
-            $table->string('name_prefix');
+            $table->string('name_prefix')->nullable();
             $table->string('name_suffix')->nullable();
             $table->string('first_name');
             $table->string('last_name');
