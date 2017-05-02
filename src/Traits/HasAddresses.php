@@ -33,7 +33,7 @@ trait HasAddresses
      *
      * @return \Illuminate\Database\Eloquent\Model|null
      */
-    public function address(string $role, $address = null): Model
+    public function address(string $role, $address = null): ?Model
     {
         if (is_array($address)) {
             $address = $this->addresses()->create($address);
@@ -44,5 +44,15 @@ trait HasAddresses
         }
 
         return $this->addresses()->whereRole($role)->first();
+    }
+
+    /**
+     * @param string $role
+     *
+     * @return bool
+     */
+    public function hasAddress(string $role): bool
+    {
+        return !empty($this->address($role));
     }
 }
