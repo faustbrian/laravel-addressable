@@ -11,7 +11,6 @@
     "require": {
         "php": "^7.0",
         "illuminate/database": "5.4.*",
-        "faustbrian/laravel-service-provider": "^1.1",
         "faustbrian/laravel-countries": "^4.0"
     },
     "require-dev": {
