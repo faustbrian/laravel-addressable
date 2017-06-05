@@ -1,8 +1,5 @@
 <?php
 
-
-declare(strict_types=1);
-
 /*
  * This file is part of Laravel Addressable.
  *
@@ -37,7 +34,7 @@ class Address extends Model
      */
     public function country(): BelongsTo
     {
-        return $this->belongsTo(config('addressable.models.country'));
+        return $this->belongsTo(config('laravel-addressable.models.country'));
     }
 
     /**

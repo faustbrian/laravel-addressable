@@ -1,8 +1,5 @@
 <?php
 
-
-declare(strict_types=1);
-
 /*
  * This file is part of Laravel Addressable.
  *
@@ -15,52 +12,32 @@ declare(strict_types=1);
 namespace BrianFaust\Addressable;
 
 use BrianFaust\Countries\CountriesServiceProvider;
-use BrianFaust\ServiceProvider\AbstractServiceProvider;
+use Illuminate\Support\ServiceProvider;
 use Illuminate\Interfaces\Foundation\Application;
 
-class AddressableServiceProvider extends AbstractServiceProvider
+class AddressableServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
      */
-    public function boot(): void
+    public function boot()
     {
-        $this->publishMigrations();
+        $this->publishes([
+            __DIR__.'/../database/migrations' => database_path('migrations'),
+        ], 'migrations');
 
-        $this->publishConfig();
+        $this->publishes([
+            __DIR__.'/../config/laravel-addressable.php' => config_path('laravel-addressable.php'),
+        ], 'config');
     }
 
     /**
      * Register the application services.
      */
-    public function register(): void
+    public function register()
     {
-        parent::register();
-
-        $this->mergeConfig();
+        $this->mergeConfigFrom(__DIR__.'/../config/laravel-addressable.php', 'laravel-addressable');
 
         $this->app->register(CountriesServiceProvider::class);
-    }
-
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
-    public function provides(): array
-    {
-        return array_merge(parent::provides(), [
-            CountriesServiceProvider::class,
-        ]);
-    }
-
-    /**
-     * Get the default package name.
-     *
-     * @return string
-     */
-    public function getPackageName(): string
-    {
-        return 'addressable';
     }
 }

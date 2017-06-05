@@ -10,15 +10,6 @@ Require this package, with [Composer](https://getcomposer.org/), in the root dir
 $ composer require faustbrian/laravel-addressable
 ```
 
-Now add the service provider within `app/config/app.php`.
-
-``` php
-'providers' => [
-    // ...
-    BrianFaust\Addressable\AddressableServiceProvider::class
-];
-```
-
 You can publish the migration with:
 
 ```bash
@@ -79,19 +70,11 @@ $user->address('shipping', [
 ]);
 ```
 
-## Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
-
 ## Testing
 
 ``` bash
 $ phpunit
 ```
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Security
 

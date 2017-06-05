@@ -1,8 +1,5 @@
 <?php
 
-
-declare(strict_types=1);
-
 /*
  * This file is part of Laravel Addressable.
  *
@@ -25,7 +22,7 @@ trait HasAddresses
      */
     public function addresses(): MorphMany
     {
-        return $this->morphMany(config('addressable.models.address'), 'model');
+        return $this->morphMany(config('laravel-addressable.models.address'), 'model');
     }
 
     /**
