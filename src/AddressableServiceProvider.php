@@ -38,6 +38,14 @@ class AddressableServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/../config/laravel-addressable.php', 'laravel-addressable');
 
+        $this->registerProviders();
+    }
+
+    /**
+     * Register the third-party service providers.
+     */
+    private function registerProviders()
+    {
         $this->app->register(CountriesServiceProvider::class);
     }
 }
