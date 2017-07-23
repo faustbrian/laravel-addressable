@@ -11,8 +11,8 @@
 
 namespace BrianFaust\Addressable\Traits;
 
-use BrianFaust\Addressable\Models\Address;
 use Illuminate\Database\Eloquent\Model;
+use BrianFaust\Addressable\Models\Address;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 trait HasAddresses
@@ -50,6 +50,6 @@ trait HasAddresses
      */
     public function hasAddress(string $role): bool
     {
-        return !empty($this->address($role));
+        return ! empty($this->address($role));
     }
 }
