@@ -13,9 +13,9 @@ declare(strict_types=1);
 
 namespace BrianFaust\Addressable;
 
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Interfaces\Foundation\Application;
 use BrianFaust\Countries\CountriesServiceProvider;
+use Illuminate\Interfaces\Foundation\Application;
+use Illuminate\Support\ServiceProvider;
 
 class AddressableServiceProvider extends ServiceProvider
 {
