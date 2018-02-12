@@ -13,10 +13,10 @@ declare(strict_types=1);
 
 namespace BrianFaust\Addressable\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use BrianFaust\Countries\Models\Country;
-use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Address extends Model
 {
