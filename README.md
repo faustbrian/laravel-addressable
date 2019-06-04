@@ -39,7 +39,7 @@ $ php artisan vendor:publish --provider="Artisanry\Addressable\AddressableServic
 
 namespace App;
 
-use Artisanry\Addressable\HasAddresses;
+use Artisanry\Addressable\Traits\HasAddresses;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
