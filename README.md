@@ -1,22 +1,22 @@
 # Laravel Addressable
 
-[![Build Status](https://img.shields.io/travis/faustbrian/Laravel-Addressable/master.svg?style=flat-square)](https://travis-ci.org/faustbrian/Laravel-Addressable)
-[![PHP from Packagist](https://img.shields.io/packagist/php-v/faustbrian/laravel-addressable.svg?style=flat-square)]()
-[![Latest Version](https://img.shields.io/github/release/faustbrian/Laravel-Addressable.svg?style=flat-square)](https://github.com/faustbrian/Laravel-Addressable/releases)
-[![License](https://img.shields.io/packagist/l/faustbrian/Laravel-Addressable.svg?style=flat-square)](https://packagist.org/packages/faustbrian/Laravel-Addressable)
+[![Build Status](https://img.shields.io/travis/artisanry/Addressable/master.svg?style=flat-square)](https://travis-ci.org/artisanry/Addressable)
+[![PHP from Packagist](https://img.shields.io/packagist/php-v/artisanry/addressable.svg?style=flat-square)]()
+[![Latest Version](https://img.shields.io/github/release/artisanry/Addressable.svg?style=flat-square)](https://github.com/artisanry/Addressable/releases)
+[![License](https://img.shields.io/packagist/l/artisanry/Addressable.svg?style=flat-square)](https://packagist.org/packages/artisanry/Addressable)
 
 ## Installation
 
 Require this package, with [Composer](https://getcomposer.org/), in the root directory of your project.
 
 ``` bash
-$ composer require faustbrian/laravel-addressable
+$ composer require artisanry/addressable
 ```
 
 You can publish the migration with:
 
 ```bash
-$ php artisan vendor:publish --provider="BrianFaust\Addressable\AddressableServiceProvider" --tag="migrations"
+$ php artisan vendor:publish --provider="Artisanry\Addressable\AddressableServiceProvider" --tag="migrations"
 ```
 
 After the migration has been published you can create the tables by running the migrations:
@@ -28,7 +28,7 @@ $ php artisan migrate
 You can publish the config file with:
 
 ```bash
-$ php artisan vendor:publish --provider="BrianFaust\Addressable\AddressableServiceProvider" --tag="config"
+$ php artisan vendor:publish --provider="Artisanry\Addressable\AddressableServiceProvider" --tag="config"
 ```
 
 ## Usage
@@ -39,7 +39,7 @@ $ php artisan vendor:publish --provider="BrianFaust\Addressable\AddressableServi
 
 namespace App;
 
-use BrianFaust\Addressable\HasAddresses;
+use Artisanry\Addressable\HasAddresses;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
@@ -81,7 +81,7 @@ $ phpunit
 
 ## Security
 
-If you discover a security vulnerability within this package, please send an e-mail to hello@brianfaust.me. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within this package, please send an e-mail to hello@basecode.sh. All security vulnerabilities will be promptly addressed.
 
 ## Credits
 
@@ -90,4 +90,4 @@ If you discover a security vulnerability within this package, please send an e-m
 
 ## License
 
-[MIT](LICENSE) © [Brian Faust](https://brianfaust.me)
+[MIT](LICENSE) © [Brian Faust](https://basecode.sh)

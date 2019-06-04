@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of Laravel Addressable.
  *
- * (c) Brian Faust <hello@brianfaust.de>
+ * (c) Brian Faust <hello@basecode.sh>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -27,7 +27,7 @@ return [
         |--------------------------------------------------------------------------
         */
 
-        'address' => \BrianFaust\Addressable\Models\Address::class,
+        'address' => \Artisanry\Addressable\Models\Address::class,
 
         /*
         |--------------------------------------------------------------------------
@@ -35,7 +35,7 @@ return [
         |--------------------------------------------------------------------------
         */
 
-        'country' => \BrianFaust\Countries\Models\Country::class,
+        'country' => \Artisanry\Countries\Models\Country::class,
 
     ],
 
