@@ -8,16 +8,14 @@
         "Laravel Addressable"
     ],
     "license": "MPL-2.0",
-    "authors": [
-        {
-            "name": "Brian Faust",
-            "email": "hello@basecode.sh",
-            "homepage": "https://basecode.sh"
-        }
-    ],
+    "authors": [{
+        "name": "Brian Faust",
+        "email": "hello@basecode.sh",
+        "homepage": "https://basecode.sh"
+    }],
     "require": {
         "php": "^7.2",
-        "illuminate/database": "^5.8",
+        "illuminate/database": "^5.8|^6.0",
         "artisanry/countries": "^4.0"
     },
     "require-dev": {
