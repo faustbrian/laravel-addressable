@@ -16,7 +16,7 @@
     "require": {
         "php": "^7.2",
         "illuminate/database": "^5.8|^6.0",
-        "artisanry/countries": "^4.0"
+        "artisanry/countries": "^5.0.0"
     },
     "require-dev": {
         "graham-campbell/testbench": "^5.0",
